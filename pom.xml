@@ -11,6 +11,7 @@
 
   <modules>
     <module>glicko2</module>
+    <module>jmh</module>
   </modules>
 
   <properties>
