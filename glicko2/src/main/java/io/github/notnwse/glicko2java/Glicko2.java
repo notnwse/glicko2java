@@ -22,7 +22,7 @@
 
 package io.github.notnwse.glicko2java;
 
-import java.util.List;
+import java.util.Collection;
 
 public final class Glicko2 {
 
@@ -50,7 +50,7 @@ public final class Glicko2 {
     return new Glicko2(tau);
   }
 
-  public Rating recalculate(Rating player, List<Match> matches) {
+  public Rating recalculate(Rating player, Collection<? extends Match> matches) {
     final double mu = (player.rating() - 1500.0) / SCALE;
     final double phi = player.deviation() / SCALE;
     final double sigma = player.volatility();
@@ -64,9 +64,7 @@ public final class Glicko2 {
     double vInv = 0.0;
     double deltaSum = 0.0;
 
-    // noinspection ForLoopReplaceableByForEach
-    for (int idx = 0; idx < matches.size(); idx++) {
-      final Match match = matches.get(idx);
+    for (final Match match : matches) {
       final double muJ = (match.opponent().rating() - 1500.0) / SCALE;
       final double phiJ = match.opponent().deviation() / SCALE;
 
