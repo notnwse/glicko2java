@@ -39,7 +39,7 @@ class Glicko2Test {
         Match.of(Rating.of(1550, 100, Rating.DEFAULT_VOLATILITY), Match.LOSS),
         Match.of(Rating.of(1700, 300, Rating.DEFAULT_VOLATILITY), Match.LOSS)
     );
-    final Glicko2 glicko2 = Glicko2.createDefault();
+    final Glicko2 glicko2 = Glicko2.create();
 
     final Rating newRating = glicko2.recalculate(player, matches);
 
@@ -51,7 +51,7 @@ class Glicko2Test {
   @Test
   void testInactivity() {
     final Rating player = Rating.of(Rating.DEFAULT_RATING, 200, Rating.DEFAULT_VOLATILITY);
-    final Glicko2 glicko2 = Glicko2.createDefault();
+    final Glicko2 glicko2 = Glicko2.create();
 
     final Rating newRating = glicko2.recalculate(player, Collections.emptyList());
 

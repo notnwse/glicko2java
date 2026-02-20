@@ -41,14 +41,14 @@ public record Rating(
   }
 
   public static Rating unrated() {
-    return new Rating(DEFAULT_RATING, DEFAULT_DEVIATION, DEFAULT_VOLATILITY);
-  }
-
-  public static Rating of(double rating, double deviation, double volatility) {
-    return new Rating(rating, deviation, volatility);
+    return of(DEFAULT_RATING, DEFAULT_DEVIATION, DEFAULT_VOLATILITY);
   }
 
   public static Rating rating(double rating, double deviation, double volatility) {
     return of(rating, deviation, volatility);
+  }
+
+  public static Rating of(double rating, double deviation, double volatility) {
+    return new Rating(rating, deviation, volatility);
   }
 }

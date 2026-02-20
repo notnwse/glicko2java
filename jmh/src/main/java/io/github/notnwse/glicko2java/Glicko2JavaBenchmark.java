@@ -44,7 +44,7 @@ public class Glicko2JavaBenchmark {
 
   @Setup(Level.Trial)
   public void setup() {
-    this.glicko2 = Glicko2.createDefault();
+    this.glicko2 = Glicko2.create();
     this.data = new Data[this.size];
 
     final Random random = new Random(42);

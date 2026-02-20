@@ -39,11 +39,11 @@ public record Match(
     }
   }
 
-  public static Match of(Rating opponent, double score) {
-    return new Match(opponent, score);
-  }
-
   public static Match match(Rating opponent, double score) {
     return of(opponent, score);
+  }
+
+  public static Match of(Rating opponent, double score) {
+    return new Match(opponent, score);
   }
 }

@@ -39,11 +39,11 @@ public final class Glicko2 {
     this.tauSq = tau * tau;
   }
 
-  public static Glicko2 createDefault() {
-    return new Glicko2(DEFAULT_TAU);
+  public static Glicko2 create() {
+    return create(DEFAULT_TAU);
   }
 
-  public static Glicko2 withTau(double tau) {
+  public static Glicko2 create(double tau) {
     if (tau <= 0 || Double.isNaN(tau) || Double.isInfinite(tau)) {
       throw new IllegalArgumentException("tau must be positive and finite");
     }
