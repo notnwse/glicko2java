@@ -5,27 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.notnwse</groupId>
-  <artifactId>glicko2java</artifactId>
+  <artifactId>glicko2java-parent</artifactId>
   <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>glicko2</module>
+  </modules>
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>6.0.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.27.7</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>
