@@ -40,7 +40,7 @@ public record Rating(
     }
   }
 
-  public static Rating newDefault() {
+  public static Rating unrated() {
     return new Rating(DEFAULT_RATING, DEFAULT_DEVIATION, DEFAULT_VOLATILITY);
   }
 

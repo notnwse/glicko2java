@@ -29,7 +29,7 @@ public final class Glicko2 {
   private static final double SCALE = 173.7178;
   private static final double EPSILON = 0.000001;
   private static final double PI_SQ = Math.PI * Math.PI;
-  private static final double TAU_DEFAULT = 0.5;
+  private static final double DEFAULT_TAU = 0.5;
 
   private final double tau;
   private final double tauSq;
@@ -40,10 +40,13 @@ public final class Glicko2 {
   }
 
   public static Glicko2 createDefault() {
-    return new Glicko2(TAU_DEFAULT);
+    return new Glicko2(DEFAULT_TAU);
   }
 
   public static Glicko2 withTau(double tau) {
+    if (tau <= 0 || Double.isNaN(tau) || Double.isInfinite(tau)) {
+      throw new IllegalArgumentException("tau must be positive and finite");
+    }
     return new Glicko2(tau);
   }
 
