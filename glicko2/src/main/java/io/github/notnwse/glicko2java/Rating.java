@@ -47,4 +47,8 @@ public record Rating(
   public static Rating of(double rating, double deviation, double volatility) {
     return new Rating(rating, deviation, volatility);
   }
+
+  public static Rating rating(double rating, double deviation, double volatility) {
+    return of(rating, deviation, volatility);
+  }
 }
